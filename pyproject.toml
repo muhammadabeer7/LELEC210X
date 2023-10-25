@@ -8,16 +8,6 @@ target-version = ["py38"]
 [tool.isort]
 profile = "black"
 py_version = 38
-
-[tool.poetry]
-authors = ["LELEC210X teaching assistants"]
-description = ""
-name = "LELEC210X"
-packages = [{include = "classification", from = "classification/src"}, {include = "leaderboard", from = "leaderboard/src"}]
-readme = "README.md"
-version = "0.1.0"
-
-[tool.poetry.dependencies]
 python = "^3.8"
 
 [tool.poetry.group.classification.dependencies]

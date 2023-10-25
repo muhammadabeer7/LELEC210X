@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
+
 """
-uart-reader.py 
+uart-reader.py
 ELEC PROJECT - 210x
 """
 import argparse
@@ -38,4 +38,3 @@ else :
                 print(serialString.decode("Ascii"))
             except:
                 pass
-                
