@@ -8,9 +8,29 @@ target-version = ["py38"]
 [tool.isort]
 profile = "black"
 py_version = 38
+<<<<<<< HEAD
+=======
+
+[tool.poetry]
+authors = ["LELEC210X teaching assistants"]
+description = ""
+name = "LELEC210X"
+packages = [{include = "auth", from = "auth/src"}, {include = "classification", from = "classification/src"}, {include = "leaderboard", from = "leaderboard/src"}]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+>>>>>>> d53bcbadc56034316e30d7913973ff1d0744997a
 python = "^3.8"
 
+[tool.poetry.group.auth.dependencies]
+click = "^8.1.7"
+cryptography = "^41.0.5"
+pyserial = "^3.5"
+pyzmq = "^25.1.1"
+
 [tool.poetry.group.classification.dependencies]
+click = "^8.1.7"
 librosa = "^0.10.1"
 notebook = "^7.0.4"
 scipy = "^1.09"
@@ -41,6 +61,12 @@ requests = "^2.28.2"
 
 [tool.poetry.group.tex.dependencies]
 pygments = "^2.16.1"
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."console_scripts"]
+auth = "auth.__main__:main"
+classify = "classification.__main__:main"
 
 [tool.ruff]
 ignore = [
