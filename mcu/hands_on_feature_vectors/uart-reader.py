@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 uart-reader.py
 ELEC PROJECT - 210x
@@ -45,7 +44,7 @@ def reader(port=None):
 
             yield buffer_array
 
-                  
+
 if __name__ == "__main__":
     argParser = argparse.ArgumentParser()
     argParser.add_argument("-p", "--port", help="Port for serial communication")
@@ -70,10 +69,16 @@ if __name__ == "__main__":
         for melvec in input_stream:
             msg_counter += 1
 
-            print("MEL Spectrogram #{}".format(msg_counter))
+            print(f"MEL Spectrogram #{msg_counter}")
 
             plt.figure()
-            plot_specgram(melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T, ax=plt.gca(), is_mel=True, title="MEL Spectrogram #{}".format(msg_counter), xlabel="Mel vector")
+            plot_specgram(
+                melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T,
+                ax=plt.gca(),
+                is_mel=True,
+                title=f"MEL Spectrogram #{msg_counter}",
+                xlabel="Mel vector",
+            )
             plt.draw()
             plt.pause(0.001)
             plt.clf()

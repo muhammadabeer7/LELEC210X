@@ -1,4 +1,3 @@
-
 """
 uart-reader.py
 ELEC PROJECT - 210x
